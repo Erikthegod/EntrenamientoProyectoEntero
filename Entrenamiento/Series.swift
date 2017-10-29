@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class Series : NSObject{
     
@@ -19,4 +20,11 @@ class Series : NSObject{
         self.repeticiones = repeticiones
         self.rmSerie = rmSerie
 }
+    init?(snapshot: DataSnapshot) {
+        guard let dict = snapshot.value as? [String:Any] else { return nil }
+        guard let repeticiones  = dict["repeticiones"] as? Int  else { return nil }
+        guard let rmSerie = dict["rmSerie"]  as? Int else { return nil }
+        self.repeticiones = repeticiones
+        self.rmSerie = rmSerie
+    }
 }

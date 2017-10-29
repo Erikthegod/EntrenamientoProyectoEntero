@@ -8,20 +8,21 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class Perfil : NSObject{
 
-    var peso : Double;
-    var grasa : Double;
-    var masa: Double;
-    var pectoral: Double;
-    var brazo: Double;
-    var cintura: Double;
-    var abdomen: Double;
-    var cadera: Double;
-    var muslo: Double;
-    var pantorrilla: Double;
-    var fecha : String;
+    var peso : Double?;
+    var grasa : Double?;
+    var masa: Double?;
+    var pectoral: Double?;
+    var brazo: Double?;
+    var cintura: Double?;
+    var abdomen: Double?;
+    var cadera: Double?;
+    var muslo: Double?;
+    var pantorrilla: Double?;
+    var fecha : String?;
     
     init( peso : Double,
     grasa : Double,
@@ -44,5 +45,33 @@ class Perfil : NSObject{
         self.muslo=muslo
         self.pantorrilla=pantorrilla
         self.fecha=fecha
+    }
+    
+    init?(perfilJson : DataSnapshot){
+        guard let json = perfilJson.value as? [String:Any] else { return nil }
+        let peso = json["peso"] as? Double
+        let grasa = json["grasa"] as? Double
+        let masa = json["masa"] as? Double
+        let pectoral = json["pectoral"] as? Double
+        let brazo = json["brazo"] as? Double
+        let cintura = json["cintura"] as? Double
+        let abdomen = json["abdomen"] as? Double
+        let cadera = json["cadera"] as? Double
+        let muslo = json["muslo"] as? Double
+        let pantorrilla = json["pantorrilla"] as? Double
+        let fecha = json["fecha"] as? String
+        
+        self.peso=peso
+        self.grasa=grasa
+        self.masa=masa
+        self.pectoral=pectoral
+        self.brazo=brazo
+        self.cintura=cintura
+        self.abdomen=abdomen
+        self.cadera=cadera
+        self.muslo=muslo
+        self.pantorrilla=pantorrilla
+        self.fecha=fecha
+
     }
 }

@@ -12,11 +12,11 @@ import UIKit
 class Ejercicios : NSObject{
     
     var nombre : String!;
-    var seriesEjercicios : [Series];
-    var valores : [Valores];
-    var grupo : String!;
-    var descanso : Int;
-    var imagen : UIImage;
+    var seriesEjercicios : [Series]?;
+    var valores : [Valores]?;
+    var grupo : String?;
+    var descanso : Int?;
+    var imagen : UIImage?;
 
 
     init(nombre : String, seriesEjercicios : [Series], valores : [Valores], grupo : String, descanso : Int, imagen : UIImage ) {
@@ -26,6 +26,12 @@ class Ejercicios : NSObject{
         self.grupo = grupo
         self.descanso = descanso
         self.imagen = imagen
+    }
+    
+    init?(nombreEjercicio : String, series :[Series], descanso:Int){
+        self.nombre = nombreEjercicio
+        self.seriesEjercicios = series
+        self.descanso = descanso
     }
 }
 

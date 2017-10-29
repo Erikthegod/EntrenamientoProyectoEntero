@@ -8,13 +8,21 @@
 
 import Foundation
 import UIKit
+import Firebase
+
 
 class Rutina : NSObject{
     
     var nombre : String;
     
-    init(nombre : String ) {
+    init(nombre : String) {
         self.nombre = nombre
     }
+    
+    init?(rutinaJson: String){
+        let rutina  = rutinaJson
+        self.nombre = rutina
+    }
+
 }
 

@@ -10,4 +10,6 @@ target 'Entrenamiento' do
     pod 'Firebase/Database'
     pod 'Firebase/Auth'
     pod 'Firebase/Storage'
+    pod 'FirebaseUI/Storage'
+    pod 'SDWebImage', '~> 4.0'
 end

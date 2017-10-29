@@ -29,6 +29,23 @@ class Datos : NSObject{
         self.repeticiones = repeticiones
     }
     
+    init?(datosJson : NSDictionary){
+        let nombreEjercicio = datosJson["nombreEjercicio"] as? String
+        let peso = datosJson["peso"] as? Double
+        let velocidad = datosJson["velocidad"] as? Double
+        let fecha = datosJson["fecha"] as? String
+        let repeticiones = datosJson["repeticiones"] as? Int
+        let nombrePersona = datosJson["nombrePersona"] as? String
+        
+        self.nombrePersona = nombrePersona
+        self.nombreEjercicio = nombreEjercicio
+        self.peso = peso
+        self.velocidad = velocidad
+        self.fecha = fecha
+        self.repeticiones = repeticiones
+
+    }
+    
     
 }
 
