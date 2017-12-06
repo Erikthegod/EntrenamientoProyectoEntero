@@ -8,9 +8,8 @@
 
 import UIKit
 import Firebase
-import FirebaseStorage
+import FirebaseDatabase
 import SDWebImage
-import FirebaseStorageUI
 
 class ViewControllerRutinas: UITableViewController {
     

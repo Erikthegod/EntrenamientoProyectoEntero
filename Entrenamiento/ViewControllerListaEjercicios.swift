@@ -8,9 +8,7 @@
 
 import UIKit
 import Firebase
-import FirebaseStorage
 import SDWebImage
-import FirebaseStorageUI
 
 class ViewControllerListaEjercicios: UITableViewController {
     var ejer : Ejercicios!
